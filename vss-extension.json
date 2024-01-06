@@ -1,10 +1,10 @@
 {
     "manifestVersion": 1,
-    "id": "authenticated-scripts",
-    "publisher": "cloudpup",
-    "version": "1.0.0",
-    "name": "Authenticated Scripts",
-    "description": "Use a service connection with scripts instead of pasting secrets into variables!",
+    "id": "authenticated-lcs-scripts",
+    "publisher": "inway-fh",
+    "version": "0.0.1",
+    "name": "Authenticated LCS Scripts",
+    "description": "Use a LCS service connection with scripts instead of pasting secrets into variables!",
     "categories": [
         "Azure Pipelines"
     ],
@@ -44,31 +44,19 @@
     },
     "links": {
         "home": {
-            "uri": "https://github.com/cloudpups/authenticated-scripts"
+            "uri": "https://github.com/InwaySystems/authenticated-lcs-scripts"
         },
         "repository": {
-            "uri": "https://github.com/cloudpups/authenticated-scripts"
+            "uri": "https://github.com/InwaySystems/authenticated-lcs-scripts"
         },
         "issues": {
-            "uri": "https://github.com/cloudpups/authenticated-scripts/issues"
+            "uri": "https://github.com/InwaySystems/authenticated-lcs-scripts/issues"
         }
     },
     "repository": {
         "type": "git",
-        "uri": "https://github.com/cloudpups/authenticated-scripts"
+        "uri": "https://github.com/InwaySystems/authenticated-lcs-scripts"
     },
-    "badges": [
-        {
-            "uri": "https://dev.azure.com/cloudpup/Public%20Pen/_apis/build/status/Authenticated%20Scripts?branchName=main&stageName=Build",
-            "href": "https://dev.azure.com/cloudpup/Public%20Pen/_build?definitionId=7&_a=summary&branchFilter=2%2C2%2C2%2C2%2C2",
-            "description": "Build"
-        },
-        {
-            "uri": "https://dev.azure.com/cloudpup/Public%20Pen/_apis/build/status/Authenticated%20Scripts?branchName=main&stageName=Publish%20Public",
-            "href": "https://dev.azure.com/cloudpup/Public%20Pen/_build?definitionId=7&_a=summary&branchFilter=2%2C2%2C2%2C2%2C2",
-            "description": "Release"
-        }
-    ],
     "contributions": [
         {
             "id": "powershell-task",

@@ -6,15 +6,19 @@ import tr = require('azure-pipelines-task-lib/toolrunner');
 import uuidV4 = require('uuid/v4');
 
 function getServiceConnection() {
-    const serviceConnectionId = tl.getInput("serviceConnection", true);
+    const serviceConnectionId = tl.getInput("lcsServiceConnection", true);
     const url = tl.getEndpointUrl(serviceConnectionId, true);
     const username = tl.getEndpointAuthorizationParameter(serviceConnectionId, "username", true);
-    const password = tl.getEndpointAuthorizationParameter(serviceConnectionId, "password", false);
+    const password = tl.getEndpointAuthorizationParameter(serviceConnectionId, "password", true);
+    const clientid = tl.getEndpointAuthorizationParameter(serviceConnectionId, "clientid", true);
+    const lcsApiUrl = tl.getEndpointDataParameter(serviceConnectionId, "apiurl", true);
 
     return {
         url: url,
         username: username,
-        password: password
+        password: password,
+        clientid: clientid,
+        lcsApiUrl: lcsApiUrl
     }
 }
 
@@ -125,7 +129,9 @@ async function run() {
         const serviceConnectionAsEnv = {
             "AS_SC_URL": serviceConnection.url,
             "AS_SC_USERNAME": serviceConnection.username,
-            "AS_SC_PASSWORD": serviceConnection.password
+            "AS_SC_PASSWORD": serviceConnection.password,
+            "AS_SC_CLIENTID": serviceConnection.clientid,
+            "AS_SC_APIURL": serviceConnection.lcsApiUrl
         };
 
         // We do not want to overwrite the existing environment variables.

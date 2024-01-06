@@ -24,4 +24,4 @@ SOFTWARE.
 
 # Open Source Inspirations and Inclusions
 
-* The PowerShell task was inspired heavily by Azure Pipelines Tasks - see https://github.com/microsoft/azure-pipelines-tasks/blob/master/LICENSE.txt
+* This task was inspired heavily by @cloudpups authenticated scripts task - see https://github.com/cloudpups/authenticated-scripts/blob/main/LICENSE
