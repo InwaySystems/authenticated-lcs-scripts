@@ -1,4 +1,4 @@
-# Authenticated Scripts
+# LCS Authenticated Scripts
 
 An Azure DevOps Extension that allows scripts to use a [LCS Service Connection](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/dev-tools/pipeline-lcs-connection)! Currently supports Bash and PowerShell.
 

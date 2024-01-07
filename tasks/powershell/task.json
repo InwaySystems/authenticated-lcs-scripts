@@ -1,15 +1,15 @@
 {
   "id": "49d42f40-8bd9-4b96-b32f-86cba34f8db8",
-  "name": "AuthenticatedLCSPowerShell",
-  "friendlyName": "Authenticated LCS PowerShell",
-  "description": "Run a PowerShell script with a LCS Service Connection exposed as environment variables on Linux, macOS, or Windows.",
+  "name": "LCSAuthenticatedPowerShell",
+  "friendlyName": "LCS Authenticated PowerShell",
+  "description": "Run a PowerShell script with a LCS Service Connection exposed as environment variables on Windows.",
   "author": "fh-inway",
-  "helpMarkDown": "TODO",
+  "helpMarkDown": "The LCS Service Connection is mapped to environment variables as follows:\n* authentication endpoint --> `AS_SC_URL`\n*Dynamics Lifecycle Services api endpoint --> `AS_SC_APIURL`\n* username --> `AS_SC_USERNAME`\n* password --> `AS_SC_PASSWORD`\n* application (client) id --> `AS_SC_CLIENTID`\n\nSee the example for more details: [example](https://github.com/InwaySystems/lcs-authenticated-scripts/blob/main/docs/Overview.md#example)",
   "category": "Utility",
   "version": {
     "Major": 0,
     "Minor": 0,
-    "Patch": 2
+    "Patch": 3
   },
   "visibility": [
     "Build",
@@ -17,7 +17,7 @@
   ],
   "demands": [
   ],
-  "instanceNameFormat": "Authenticated LCS PowerShell Script",
+  "instanceNameFormat": "LCS Authenticated PowerShell Script",
   "showEnvironmentVariables": true,
   "groups": [
     {

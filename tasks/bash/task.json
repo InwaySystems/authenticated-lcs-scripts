@@ -1,15 +1,15 @@
 {
   "id": "0f52b971-bffb-4bdf-8a57-711031cecc3a",
-  "name": "AuthenticatedLCSBash",
-  "friendlyName": "Authenticated LCS Bash",
-  "description": "Run a Bash script with a LCS Service Connection exposed as environment variables on Linux, macOS, or Windows.",
+  "name": "LCSAuthenticatedBash",
+  "friendlyName": "LCS Authenticated Bash",
+  "description": "Run a Bash script with a LCS Service Connection exposed as environment variables on Windows.",
   "author": "fh-inway",
-  "helpMarkDown": "TODO",
+  "helpMarkDown": "The LCS Service Connection is mapped to environment variables as follows:\n* authentication endpoint --> `AS_SC_URL`\n*Dynamics Lifecycle Services api endpoint --> `AS_SC_APIURL`\n* username --> `AS_SC_USERNAME`\n* password --> `AS_SC_PASSWORD`\n* application (client) id --> `AS_SC_CLIENTID`\n\nSee the example for more details: [example](https://github.com/InwaySystems/lcs-authenticated-scripts/blob/main/docs/Overview.md#example)",
   "category": "Utility",
   "version": {
     "Major": 0,
     "Minor": 0,
-    "Patch": 1
+    "Patch": 2
   },
   "visibility": [
     "Build",
@@ -17,7 +17,7 @@
   ],
   "demands": [
   ],
-  "instanceNameFormat": "Authenticated LCS Bash Script",
+  "instanceNameFormat": "LCS Authenticated Bash Script",
   "showEnvironmentVariables": true,
   "groups": [
     {
