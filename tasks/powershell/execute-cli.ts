@@ -112,16 +112,18 @@ async function run() {
 
         // Run the script.
         //
-        // Note, prefer "powershell" over "pwsh" unless the pwsh input is true.
+        // Note, prefer "powershell" over "pwsh" on Windows unless the pwsh input is true.
         //
         // Note, use "-Command" instead of "-File" to match the Windows implementation. Refer to
         // comment on Windows implementation for an explanation why "-Command" is preferred.
         console.log('========================== Starting Command Output ===========================');
 
         const executionOperator = input_runScriptInSeparateScope ? '&' : '.';
+
+        const isWindows = os.platform() === 'win32';
                 
         let powershell: tr.ToolRunner;
-        if (input_pwsh) {
+        if (input_pwsh || !isWindows) {
             powershell = tl.tool(tl.which('pwsh') || tl.which('powershell') || tl.which('pwsh', true));
         } else {
             powershell = tl.tool(tl.which('powershell') || tl.which('pwsh') || tl.which('powershell', true));
