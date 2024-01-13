@@ -15,6 +15,9 @@ jobs:
       with:
         node-version: '10.x'
 
+    - name: Install glob-exec
+      run: npm install -g glob-exec
+
     - name: Install dependencies
       run: npm run initdev
 
