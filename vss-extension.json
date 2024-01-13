@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "authenticated-lcs-scripts",
     "publisher": "inway-fh",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "name": "Authenticated LCS Scripts",
     "description": "Use a LCS service connection with scripts instead of pasting secrets into variables!",
     "categories": [
