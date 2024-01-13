@@ -4,7 +4,7 @@
   "friendlyName": "LCS Authenticated Bash",
   "description": "Run a Bash script with a LCS Service Connection exposed as environment variables on Windows.",
   "author": "fh-inway",
-  "helpMarkDown": "The LCS Service Connection is mapped to environment variables as follows:\n* authentication endpoint --> `AS_SC_URL`\n*Dynamics Lifecycle Services api endpoint --> `AS_SC_APIURL`\n* username --> `AS_SC_USERNAME`\n* password --> `AS_SC_PASSWORD`\n* application (client) id --> `AS_SC_CLIENTID`\n\nSee the example for more details: [example](https://github.com/InwaySystems/lcs-authenticated-scripts/blob/main/docs/Overview.md#example)",
+  "helpMarkDown": "The LCS Service Connection is mapped to environment variables as follows:\n* authentication endpoint --> `AS_SC_URL`\n* Dynamics Lifecycle Services api endpoint --> `AS_SC_APIURL`\n* username --> `AS_SC_USERNAME`\n* password --> `AS_SC_PASSWORD`\n* application (client) id --> `AS_SC_CLIENTID`\n\nSee the example for more details: [example](https://github.com/InwaySystems/lcs-authenticated-scripts/blob/main/docs/Overview.md#example)",
   "category": "Utility",
   "version": {
     "Major": 0,
