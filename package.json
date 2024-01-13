@@ -17,7 +17,7 @@
     "build": "npm run build:tasks",    
     "build:tasks": "npm run compile:tasks",
     "clean": "rimraf ./dist",            
-    "postbuild": "npm run package-extension -- --rev-version",
+    "postbuild": "npm run package-extension",
     "package-extension": "tfx extension create --manifests vss-extension.json",
     "publish-extension": "tfx extension publish --manifests vss-extension.json",
     "test": "env TEST_REPORT_FILENAME=test-results.xml jest --verbose"
