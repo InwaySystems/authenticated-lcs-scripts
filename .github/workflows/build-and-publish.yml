@@ -1,6 +1,6 @@
-name: Build and publish
+name: Build
 
-on: 
+on:
   workflow_dispatch:
 
 jobs:
@@ -25,13 +25,13 @@ jobs:
       run: npm install -g tfx-cli
 
     - name: Package
-      run: tfx extension create --manifest-globs vss-extension.json
+      run: tfx extension create --manifest-globs vss-extension.json --output-path extension.vsix
 
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
         name: vsix
-        path: *.vsix
+        path: extension.vsix
 
   publish:
     runs-on: ubuntu-latest
