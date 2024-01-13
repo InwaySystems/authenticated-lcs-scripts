@@ -81,7 +81,14 @@
     ],
     "screenshots": [
         {
-            "path": "docs/highlighted_env.png"
+            "path": "docs/screenshots/pipeline_tasks.png",
+            "isDefault": true
+        },
+        {
+            "path": "docs/screenshots/highlighted_env_powershell.png"
+        },
+        {
+            "path": "docs/screenshots/highlighted_env_bash.png"
         }
     ]
 }

@@ -4,12 +4,12 @@ Use a [LCS service connection][lcsServiceConnection] with scripts instead of pas
 
 ## Features
 
-* ✅ Supply LCS Service Connection to a PowerShell script
-* ✅ Supply LCS Service Connection to a Bash script
+* ![Icon of the LCS Authenticated PowerShell pipeline task](../tasks/powershell/icon.png) Supply LCS Service Connection to a PowerShell script
+* ![Icon of the LCS Authenticated Bash pipeline task](../tasks/bash/icon.png) Supply LCS Service Connection to a Bash script
 
 ## How
 
-![A screenshot showing the service connection exposed as environment variables](/docs/highlighted_env.png)
+![A screenshot showing the service connection exposed as environment variables in a PowerShell script](/docs/screenshots/highlighted_env_powershell.png)
 
 This task injects the values of a LCS Service Connection into the current environment so that the specified script may utilize them. The values of the LCS Service Connection are mapped to environment variables as follows:
 
