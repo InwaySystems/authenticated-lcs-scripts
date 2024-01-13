@@ -29,7 +29,9 @@ jobs:
 
     - name: Determine vsix file name
       id: vsix
-      run: echo "::set-output name=vsix::$(glob-exec \"*.vsix\" -- \"echo {files}\" )"
+      run: |
+        vsix_file=$(find . -name "*.vsix" -type f)
+        echo "vsix=$vsix_file" >> $GITHUB_OUTPUT
 
     - name: Upload
       uses: actions/upload-artifact@v4
@@ -64,7 +66,9 @@ jobs:
 
       - name: Determine vsix file name
         id: vsix
-        run: echo "::set-output name=vsix::$(glob-exec \"*.vsix\" -- \"echo {files}\" )"
+        run: |
+          vsix_file=$(find . -name "*.vsix" -type f)
+          echo "vsix=$vsix_file" >> $GITHUB_OUTPUT
 
       - name: Publish to Azure DevOps Marketplace
         run: tfx extension publish --auth-type pat --token ${{ secrets.AZURE_DEVOPS_TOKEN }} --extension-id authenticated-lcs-scripts --vsix ${{ format('{0}/{1}', steps.download.outputs.download-path, steps.vsix.outputs.vsix) }}
