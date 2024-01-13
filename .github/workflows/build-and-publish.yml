@@ -13,10 +13,13 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '14.x'
+        node-version: '10.x'
 
     - name: Install glob-exec
       run: npm install -g glob-exec
+
+    - name: Install tsc
+      run: npm install -g typescript@3.9
 
     - name: Install dependencies
       run: npm run initdev
@@ -47,7 +50,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: '10.x'
 
       - name: Install Tfx
         run: npm install -g tfx-cli
