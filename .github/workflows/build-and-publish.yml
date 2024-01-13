@@ -27,17 +27,15 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Install Tfx
-      run: npm install -g tfx-cli
-
-    - name: Package
-      run: tfx extension create --manifest-globs vss-extension.json --output-path extension.vsix
+    - name: Determine vsix file name
+      id: vsix
+      run: echo "::set-output name=vsix::$(glob-exec --exec "echo {0}" --files "*.vsix")"
 
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
         name: vsix
-        path: extension.vsix
+        path: ${{ steps.vsix.outputs.vsix }}
 
   publish:
     runs-on: ubuntu-latest
@@ -64,5 +62,9 @@ jobs:
       - name: Show content of download-path folder
         run: ls ${{ steps.download.outputs.download-path }}
 
+      - name: Determine vsix file name
+        id: vsix
+        run: echo "::set-output name=vsix::$(glob-exec --exec "echo {0}" --files "*.vsix")"
+
       - name: Publish to Azure DevOps Marketplace
-        run: tfx extension publish --auth-type pat --token ${{ secrets.AZURE_DEVOPS_TOKEN }} --extension-id authenticated-lcs-scripts --vsix ${{ format('{0}/{1}', steps.download.outputs.download-path, 'extension.vsix') }}
+        run: tfx extension publish --auth-type pat --token ${{ secrets.AZURE_DEVOPS_TOKEN }} --extension-id authenticated-lcs-scripts --vsix ${{ format('{0}/{1}', steps.download.outputs.download-path, steps.vsix.outputs.vsix) }}
