@@ -4,8 +4,8 @@ Use a [LCS service connection][lcsServiceConnection] with scripts instead of pas
 
 ## Features
 
-* ![Icon of the LCS Authenticated PowerShell pipeline task](../tasks/powershell/icon.png) Supply LCS Service Connection to a PowerShell script
-* ![Icon of the LCS Authenticated Bash pipeline task](../tasks/bash/icon.png) Supply LCS Service Connection to a Bash script
+* ![Icon of the LCS Authenticated PowerShell pipeline task](../images/iconPowerShellTask.png) Supply LCS Service Connection to a PowerShell script
+* ![Icon of the LCS Authenticated Bash pipeline task](../images/iconBashTask.png) Supply LCS Service Connection to a Bash script
 
 ## How
 
@@ -47,7 +47,7 @@ steps:
 
 ## Motivation
 
-While the LCS service connection provided by the Azure DevOps extension [Dynamics 365 Finance and Operations Tools](https://marketplace.visualstudio.com/items?itemName=Dyn365FinOps.dynamics365-finops-tools) is great, it is limited to the tasks that ship with the extension. If other endpoints of the LCS API are  (e.g. the [Database Movement API](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/database/api/dbmovement-api-overview)), one must resort to using a script.
+While the LCS service connection provided by the Azure DevOps extension [Dynamics 365 Finance and Operations Tools](https://marketplace.visualstudio.com/items?itemName=Dyn365FinOps.dynamics365-finops-tools) is great, it is limited to the tasks that ship with the extension. If other endpoints of the LCS API are to be used (e.g. the [Database Movement API](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/database/api/dbmovement-api-overview)), one must resort to using a script.
 
 Unfortunately, the credentials stored in the LCS service connection are not exposed as environment variables and thus cannot be used by scripts. Without this extension, the credentials would have to be provided as variables in the pipeline (e.g. by using an Azure DevOps Pipelines library or an Azure Key Vault). This is not ideal as the credentials might be exposed in the pipeline and would have to be updated in multiple places if they were to change.
 
