@@ -4,8 +4,8 @@ Use a [LCS service connection][lcsServiceConnection] with scripts instead of pas
 
 ## Features
 
-* ![Icon of the LCS Authenticated PowerShell pipeline task](/tasks/powershell/icon.png) Supply LCS Service Connection to a PowerShell script
-* ![Icon of the LCS Authenticated Bash pipeline task](/tasks/bash/icon.png) Supply LCS Service Connection to a Bash script
+* ![Icon of the LCS Authenticated PowerShell pipeline task](/docs/icons/iconPowerShellTask.png) Supply LCS Service Connection to a PowerShell script
+* ![Icon of the LCS Authenticated Bash pipeline task](/docs/icons/iconBashTask.png) Supply LCS Service Connection to a Bash script
 
 ## How
 
