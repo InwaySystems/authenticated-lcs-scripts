@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '10.x'
 
@@ -61,8 +61,11 @@ jobs:
         with:
           name: vsix
 
-      - name: Show download-path
-        run: echo ${{ steps.download.outputs.download-path }}
+      - name: Show content of download-path folder
+        run: ls ${{ steps.download.outputs.download-path }}
+
+      - name: Unpack artifact
+        run: unzip ${{ format('{0}/{1}', steps.download.outputs.download-path, 'vsix.zip') }} -d ${{ steps.download.outputs.download-path }}
 
       - name: Publish to Azure DevOps Marketplace
-        run: tfx extension publish --auth-type pat --token ${{ secrets.AZURE_DEVOPS_TOKEN }} --extension-id authenticated-lcs-scripts --vsix ${{ steps.download.outputs.download-path }}
+        run: tfx extension publish --auth-type pat --token ${{ secrets.AZURE_DEVOPS_TOKEN }} --extension-id authenticated-lcs-scripts --vsix ${{ format('{0}/{1}', steps.download.outputs.download-path, 'extension.vsix') }}
