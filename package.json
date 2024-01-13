@@ -1,7 +1,7 @@
 {
-  "name": "authenticated-lcs-scripts",
+  "name": "lcs-authenticated-scripts",
   "version": "1.0.0",
-  "description": "Authenticated LCS Scripts",
+  "description": "LCS Authenticated Scripts",
   "keywords": [
     "extensions",
     "Azure DevOps",
