@@ -1,0 +1,62 @@
+name: Build and publish
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '10.x'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build
+      run: npm run build
+
+    - name: Install Tfx
+      run: npm install -g tfx-cli
+
+    - name: Package
+      run: tfx extension create --manifest-globs vss-extension.json
+
+    - name: Upload
+      uses: actions/upload-artifact@v4
+      with:
+        name: vsix
+        path: *.vsix
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '10.x'
+
+      - name: Install Tfx
+        run: npm install -g tfx-cli
+
+      - name: Download artifact
+        id: download
+        uses: actions/download-artifact@v4
+        with:
+          name: vsix
+
+      - name: Show download-path
+        run: echo ${{ steps.download.outputs.download-path }}
+
+      - name: Publish to Azure DevOps Marketplace
+        run: tfx extension publish --auth-type pat --token ${{ secrets.AZURE_DEVOPS_TOKEN }} --extension-id authenticated-lcs-scripts --vsix ${{ steps.download.outputs.download-path }}
